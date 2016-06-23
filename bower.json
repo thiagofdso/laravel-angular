@@ -1,0 +1,23 @@
+{
+  "name": "laravel-angular",
+  "description": "laravel com angular",
+  "main": "",
+  "authors": [
+    "Thiago Oliveira <thiagofdso.ufpa@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "angular"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower_components",
+    "test",
+    "tests"
+  ]
+}

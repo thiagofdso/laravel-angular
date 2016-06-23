@@ -1,0 +1,27 @@
+
+    <h4 ng-bind="app"></h4>
+
+    <ui-alert title="Ops, aconteceu um problema" ng-show="error">
+        {{error}}
+    </ui-alert>
+
+    <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?"/>
+    <table ng-show="contatos.length > 0" class="table">
+        <tr>
+            <th></th>
+            <th>ID</th>
+            <th><a href="" ng-click="ordenarPor('nome')"> Nome</a></th>
+            <th><a href="" ng-click="ordenarPor('telefone')">Telefone</a></th>
+            <th>Data</th>
+        </tr>
+        <tr  ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:reverso" >
+            <td><input type="checkbox" ng-model="contato.selecionado"/> </td>
+            <td>{{contato.id}}</td>
+            <td>{{contato.nome | name | elipsis:10}}</td>
+            <td>{{contato.telefone}}</td>
+            <td>{{contato.created_at | date:'dd/MM/yyyy'}}</td>
+        </tr>
+    </table>
+    <hr/>
+    <a href="#/novoContato" class="btn btn-primary btn-block" >Novo Contato</a>
+    <button ng-click="apagarContatos(contatos)" class="btn btn-danger btn-block" ng-show="isContatoSelecionado(contatos)">Remover Conato</button>
